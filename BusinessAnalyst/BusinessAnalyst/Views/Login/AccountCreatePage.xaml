@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BusinessAnalyst.Views.Login.AccountCreatePage"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="Some Logo here!"/>
+        <Label Text="Create an Account to continue"/>
+        <Entry x:Name="enterPin" Placeholder="Enter Pin" PlaceholderColor="Gray" Keyboard="Numeric"/>
+        <Entry x:Name="confirmPin" Placeholder="Confirm Pin" PlaceholderColor="LightGray" Keyboard="Numeric"/>
+        <Button Text="Create" Clicked="OnCreate"/>
+    </StackLayout>    
+</ContentPage>

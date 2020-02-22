@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BusinessAnalyst.Views.Items.ItemCreatePage"
+             NavigationPage.HasBackButton="False">
+    <StackLayout>
+        <Entry Text="{Binding ItemName}" Placeholder="Item Name" PlaceholderColor="Gray" Keyboard="Text"/>
+        <Entry Text="{Binding MRP}" Placeholder="MRP" PlaceholderColor="Gray" Keyboard="Numeric"/>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Cancel" Clicked="OnCancel"/>
+            <Button Text="Save" Clicked="OnSave"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

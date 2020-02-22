@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BusinessAnalyst.Views.HomePage"
+             xmlns:local="clr-namespace:BusinessAnalyst.MarkupExtensions"
+             NavigationPage.HasBackButton="False"
+             Title="Biz Note">
+    <StackLayout Margin="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="0" Grid.Column="0" Spacing="0">
+                <Image Source="{local:EmbeddedImage ResourceID=BusinessAnalyst.Images.ButtonLogos.icon_party.png}" 
+                       BackgroundColor="Transparent">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCreateParty"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Text="Create Party" Clicked="OnCreateParty" BackgroundColor="Transparent" />
+            </StackLayout>  
+            
+            <StackLayout Grid.Row="0" Grid.Column="1" Spacing="0">
+                <Image Source="{local:EmbeddedImage ResourceID=BusinessAnalyst.Images.ButtonLogos.icon_item.png}" 
+                       BackgroundColor="Transparent">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCreateItem"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Text="Create Item" Clicked="OnCreateItem" BackgroundColor="Transparent"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Grid.Column="0" Spacing="0">
+                <Image Source="{local:EmbeddedImage ResourceID=BusinessAnalyst.Images.ButtonLogos.icon_transaction.png}" 
+                       BackgroundColor="Transparent">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTransaction"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Text="Transactions" Clicked="OnTransaction" BackgroundColor="Transparent" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Grid.Column="1" Spacing="0">
+                <Image Source="{local:EmbeddedImage ResourceID=BusinessAnalyst.Images.ButtonLogos.icon_report.png}" 
+                       BackgroundColor="Transparent">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnReports"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Text="Reports" Clicked="OnReports" BackgroundColor="Transparent" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Grid.Column="0" Spacing="0">
+                <Image Source="{local:EmbeddedImage ResourceID=BusinessAnalyst.Images.ButtonLogos.icon_company.png}" 
+                       BackgroundColor="Transparent">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCompanyInfo"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Text="Company Info" Clicked="OnCompanyInfo" BackgroundColor="Transparent" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Grid.Column="1" Spacing="0">
+                <Image Source="{local:EmbeddedImage ResourceID=BusinessAnalyst.Images.ButtonLogos.icon_about.png}" 
+                       BackgroundColor="Transparent">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnAbout"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Text="About" Clicked="OnAbout" BackgroundColor="Transparent" />
+            </StackLayout>            
+            
+        </Grid>
+    </StackLayout>
+</ContentPage>

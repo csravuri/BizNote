@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BusinessAnalyst.Views.Transactions.TransactionsPage">
+    <StackLayout>
+        <Label x:Name="partyName"/>
+        <Label x:Name="balance"/>
+        <Grid x:Name="itemList" RowSpacing="5" ColumnSpacing="5" BackgroundColor="DarkKhaki" Padding="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+                       
+            <!--Headers-->
+            <Label BackgroundColor="White"  HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Text="Item"/>
+            <Label BackgroundColor="White" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1" Text="Qty" />
+            <Label BackgroundColor="White"  HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="2" Text="MRP" />
+            <Label BackgroundColor="White"  HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="3" Text="Amount" />
+
+            <!--Row 1-->
+            <Label BackgroundColor="White" Grid.Row="1" Grid.Column="0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SelectItem"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Entry BackgroundColor="White" Grid.Row="1" Grid.Column="1" TextChanged="OnQtyEnter" Keyboard="Numeric" />
+            <Entry BackgroundColor="White" Grid.Row="1" Grid.Column="2" Keyboard="Numeric" />
+            <Entry BackgroundColor="White" Grid.Row="1" Grid.Column="3" Keyboard="Numeric" />
+
+            <!--Row 2-->
+            <Label BackgroundColor="White" Grid.Row="2" Grid.Column="0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SelectItem"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Entry BackgroundColor="White" Grid.Row="2" Grid.Column="1" TextChanged="OnQtyEnter" Keyboard="Numeric" />
+            <Entry BackgroundColor="White" Grid.Row="2" Grid.Column="2" Keyboard="Numeric" />
+            <Entry BackgroundColor="White" Grid.Row="2" Grid.Column="3" Keyboard="Numeric" />
+            
+            <!--Row 3-->
+            <Label BackgroundColor="White" Grid.Row="3" Grid.Column="0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SelectItem"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Entry BackgroundColor="White" Grid.Row="3" Grid.Column="1" TextChanged="OnQtyEnter" Keyboard="Numeric" />
+            <Entry BackgroundColor="White" Grid.Row="3" Grid.Column="2" Keyboard="Numeric" />
+            <Entry BackgroundColor="White" Grid.Row="3" Grid.Column="3" Keyboard="Numeric" />
+
+            <!--Row 4-->
+            <Label BackgroundColor="White" Grid.Row="4" Grid.Column="0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SelectItem"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Entry BackgroundColor="White" Grid.Row="4" Grid.Column="1" TextChanged="OnQtyEnter" Keyboard="Numeric" />
+            <Entry BackgroundColor="White" Grid.Row="4" Grid.Column="2" Keyboard="Numeric" />
+            <Entry BackgroundColor="White" Grid.Row="4" Grid.Column="3" Keyboard="Numeric" />
+
+
+            <!--Row 5-->
+            <Label BackgroundColor="White" Grid.Row="5" Grid.Column="0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SelectItem"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Entry BackgroundColor="White" Grid.Row="5" Grid.Column="1" TextChanged="OnQtyEnter" Keyboard="Numeric" />
+            <Entry BackgroundColor="White" Grid.Row="5" Grid.Column="2" Keyboard="Numeric" />
+            <Entry BackgroundColor="White" Grid.Row="5" Grid.Column="3" Keyboard="Numeric" />
+
+
+        </Grid>
+        <Button Text="Add" TextColor="Green" Clicked="OnAdd"/>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Clear" Clicked="OnClear"/>
+            <Button Text="Save" Clicked="OnSave"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
