@@ -1,6 +1,6 @@
-#Main
+# Main
 To track Business Transactions, aka BusinessAnalyst
 
-##Note
+## Note
 Icons: https://icons8.com/
 Logo: https://hatchful.shopify.com/
