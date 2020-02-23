@@ -34,21 +34,51 @@ namespace BusinessAnalyst.Views.Report
             DbTransaction dbTransaction = DbTransaction.GetInstance();
             List<Register> allRegisters = await dbTransaction.GetRegisters();
 
-            List<Register> filteredRegisters = allRegisters;
+            List<Register> filteredRegisters = GetFilteredRegisters(allRegisters);
 
             registerDataGrid.RowDefinitions = new RowDefinitionCollection();
-            for(int i=0; i < filteredRegisters.Count; i++)
+            registerDataGrid.Children.Clear();
+            for (int i=0; i < filteredRegisters.Count; i++)
             {
                 registerDataGrid.RowDefinitions.Add(new RowDefinition());
-                registerDataGrid.Children.Add(new Label { Text = filteredRegisters[i].TransactionDate.ToString("dd/MM/yyyy") }, 0, i);
-                registerDataGrid.Children.Add(new Label { Text = filteredRegisters[i].BillNo }, 1, i);
-                registerDataGrid.Children.Add(new Label { Text = filteredRegisters[i].PartyName }, 2, i);
-                registerDataGrid.Children.Add(new Label { Text = filteredRegisters[i].City }, 3, i);
-                registerDataGrid.Children.Add(new Label { Text = filteredRegisters[i].Amount }, 4, i);
+                registerDataGrid.Children.Add(new Label { BackgroundColor = Color.White, Text = filteredRegisters[i].TransactionDate.ToString("dd/MM/yyyy") }, 0, i);
+                registerDataGrid.Children.Add(new Label { BackgroundColor = Color.White, Text = filteredRegisters[i].BillNo }, 1, i);
+                registerDataGrid.Children.Add(new Label { BackgroundColor = Color.White, Text = filteredRegisters[i].PartyName }, 2, i);
+                registerDataGrid.Children.Add(new Label { BackgroundColor = Color.White, Text = filteredRegisters[i].City }, 3, i);
+                registerDataGrid.Children.Add(new Label { BackgroundColor = Color.White, Text = filteredRegisters[i].Amount }, 4, i);
             }
 
-
-            //DisplayAlert("Search", "Result Coming", "OK");
         }
+
+        private List<Register> GetFilteredRegisters(List<Register> registers)
+        {
+            if(!partyLabel.Text.Contains("..."))
+            {
+                registers = registers.Where(x => x.PartyName == partyLabel.Text).ToList();
+            }
+
+            if (fromDatePicker.Date != null)
+            {
+                registers = registers.Where(x => x.TransactionDate >= fromDatePicker.Date).ToList();
+            }
+            
+            if (toDatePicker.Date != null)
+            {
+                registers = registers.Where(x => x.TransactionDate.Date <= toDatePicker.Date).ToList();
+            }
+
+            if (!string.IsNullOrWhiteSpace(billNo.Text))
+            {
+                registers = registers.Where(x => x.BillNo == billNo.Text).ToList();
+            }
+
+            if (!string.IsNullOrWhiteSpace(city.Text))
+            {
+                registers = registers.Where(x => x.City == city.Text).ToList();
+            }
+
+            return registers;
+        }
+
     }
 }

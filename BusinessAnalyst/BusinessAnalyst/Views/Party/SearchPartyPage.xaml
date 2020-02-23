@@ -12,7 +12,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.ContextActions>
-                            <MenuItem Text="Delete" IsDestructive="True" Clicked="OnDelete"/>
+                            <MenuItem Text="Delete" IsDestructive="True" Clicked="OnDelete" CommandParameter="{Binding .}"/>
                         </ViewCell.ContextActions>
                         <StackLayout>
                             <Label Text="{Binding PartyName, StringFormat='Name: {0}'}"/>

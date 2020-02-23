@@ -25,7 +25,8 @@ namespace BusinessAnalyst.Views.Parties
             InitializeComponent();
 
         }
-        public SearchPartyPage(string title, bool isSearch = true, PartyType? partyType = null)
+
+        public SearchPartyPage(string title, bool isSearch = true, PartyType? partyType = null) : this()
         {
             Title = title;
             _isFromSearch = isSearch;
