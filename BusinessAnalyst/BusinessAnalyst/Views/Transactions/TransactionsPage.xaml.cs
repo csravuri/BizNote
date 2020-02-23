@@ -84,6 +84,8 @@ namespace BusinessAnalyst.Views.Transactions
             string billNo = await Utils.GetBillNo(_party.PartyType);
             List<Transaction> transactions = new List<Transaction>();
             int gridRowCount = itemList.Children.Select(c => Grid.GetRow(c)).Max();
+
+
             for (int i = 1; i <= gridRowCount; i++)
             {
                 var itemNameLabel = itemList.Children.Where(c => Grid.GetRow(c) == i && Grid.GetColumn(c) == 0).FirstOrDefault() as Label;
@@ -130,6 +132,20 @@ namespace BusinessAnalyst.Views.Transactions
             DbTransaction dbTransaction = DbTransaction.GetInstance();
 
             dbTransaction.InsertAllAsync(transactions);
+
+            Register register = new Register
+            {
+                BillNo = billNo,
+                TransactionDate = DateTime.Now,
+                PartyName = _party.PartyName,
+                City = _party.City,
+                TransactionType = Utils.GetTransactionType(_party.PartyType),
+                Amount = transactions.Sum(t => Utils.ToDecimal(t.Amount)).ToString()
+            };
+
+            dbTransaction.InsertAsync(register);
+
+            await DisplayAlert("Success", $"Bill No: {billNo} generated", "OK");
 
             OnClear(null, null);
 

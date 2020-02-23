@@ -20,14 +20,15 @@ namespace BusinessAnalyst.Views.Parties
         {
             InitializeComponent();
 
+            partTypeList = Enum.GetValues(typeof(PartyType));
+
+            LoadValuesInPicker();
+
             Title = title;
             _party = party ?? new Party();
 
             BindingContext = _party;
 
-            partTypeList = Enum.GetValues(typeof(PartyType));
-
-            LoadValuesInPicker();
             dbTransaction = DbTransaction.GetInstance();
 
         }

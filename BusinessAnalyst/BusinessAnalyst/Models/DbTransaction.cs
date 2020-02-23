@@ -76,6 +76,10 @@ namespace BusinessAnalyst.Models
             return await _connection.Table<Transaction>().ToListAsync();
         }
 
+        public async Task<List<Register>> GetRegisters()
+        {
+            return await _connection.Table<Register>().ToListAsync();
+        }
 
         public async Task<Document> GetDocument(string documentType)
         {

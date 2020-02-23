@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BusinessAnalyst.Views.Report.SearchRegisterPage"
+             xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <StackLayout>
+        <!--Filters-->
+        <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="LawnGreen">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Text="Select Customer">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSelectParty"/>
+                </Label.GestureRecognizers>
+            </Label>
+            
+            <Button Grid.Row="0" Grid.Column="1" Text="Search" Clicked="OnSearch"/>
+            
+            <StackLayout Grid.Row="1" Grid.Column="0" Spacing="0">
+                <Label Text="From"/>
+                <DatePicker Date="{x:Static system:DateTime.Today}" Format="dd-MM-yyyy" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Grid.Column="1" Spacing="0">
+                <Label Text="To"/>
+                <DatePicker Date="{x:Static system:DateTime.Today}" Format="dd-MM-yyyy" />
+            </StackLayout>
+
+            <Entry Grid.Row="2" Grid.Column="0" Placeholder="Bill No"/>
+            
+            <Entry Grid.Row="2" Grid.Column="1" Placeholder="City"/>
+            
+        </Grid>
+        <Label Text=" "/>
+        <Grid BackgroundColor="Brown" RowSpacing="0" Padding="5">
+            <Label Grid.Column="0" Text="Date"/>
+            <Label Grid.Column="1" Text="Bill No"/>
+            <Label Grid.Column="2" Text="Party Name"/>
+            <Label Grid.Column="3" Text="City"/>
+            <Label Grid.Column="4" Text="Amount"/>
+        </Grid>
+        <ScrollView>
+            <Grid x:Name="registerDataGrid"/>
+        </ScrollView>
+        
+    </StackLayout>
+</ContentPage>

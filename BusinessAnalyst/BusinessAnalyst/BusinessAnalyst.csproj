@@ -56,6 +56,9 @@
     <Compile Update="Views\Party\PartyCreatePage.xaml.cs">
       <DependentUpon>PartyCreatePage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Report\SearchRegisterPage.xaml.cs">
+      <DependentUpon>SearchRegisterPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -72,6 +75,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Login\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Report\SearchRegisterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Report\ReportsPage.xaml">

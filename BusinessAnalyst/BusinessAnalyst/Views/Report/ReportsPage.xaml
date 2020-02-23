@@ -4,8 +4,10 @@
              x:Class="BusinessAnalyst.Views.Report.ReportsPage"
              Title="Reports">
     <StackLayout>
-        <Button Text="Search/Update Paty" Clicked="OnPartySearch"/>
-        <Button Text="Search/Update Items" Clicked="OnItemsSearch"/>
+        <Button Text="Search Party" Clicked="OnPartySearch"/>
+        <Button Text="Search Items" Clicked="OnItemsSearch"/>
         <Button Text="Search Transactions" Clicked="OnTransactionsSearch"/>
+        <Button Text="Purchase Register" Clicked="OnPurchaseRegister"/>
+        <Button Text="Sale Register" Clicked="OnSaleRegister"/>
     </StackLayout>
 </ContentPage>
