@@ -16,9 +16,14 @@ namespace BusinessAnalyst.Views.Parties
         private Party _party;
         private Array partTypeList;
         private DbTransaction dbTransaction;
-        public PartyCreatePage(string title, Party party = null)
+
+        public PartyCreatePage()
         {
             InitializeComponent();
+        }
+
+        public PartyCreatePage(string title, Party party = null) : this()
+        {
 
             partTypeList = Enum.GetValues(typeof(PartyType));
 

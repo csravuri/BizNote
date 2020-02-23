@@ -19,14 +19,16 @@ namespace BusinessAnalyst.Views.Items
 
         public ListView ItemsListView { get { return listView; } }
 
-        public SearchItemPage(string title, bool isSearch = true)
+        public SearchItemPage()
         {
             InitializeComponent();
+        }
 
+        public SearchItemPage(string title, bool isSearch = true) : this()
+        {
             Title = title;
             _isFromSearch = isSearch;
-            dbTransaction = DbTransaction.GetInstance();
-            
+            dbTransaction = DbTransaction.GetInstance();            
         }
 
         protected async override void OnAppearing()

@@ -16,9 +16,15 @@ namespace BusinessAnalyst.Views.Transactions
     public partial class TransactionsPage : ContentPage
     {
         private Party _party;
-        public TransactionsPage(Party party)
+
+        public TransactionsPage()
         {
             InitializeComponent();
+
+        }
+
+        public TransactionsPage(Party party) : this()
+        {
             Title = GetTransactionName(party.PartyType);
 
             _party = party;

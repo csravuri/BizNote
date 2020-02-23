@@ -14,10 +14,14 @@ namespace BusinessAnalyst.Views.Items
     {
         private Item _item;
         private DbTransaction dbTransaction;
-        public ItemCreatePage(string title, Item item = null)
+
+        public ItemCreatePage()
         {
             InitializeComponent();
+        }
 
+        public ItemCreatePage(string title, Item item = null) : this()
+        {            
             this.Title = title;
 
             this._item = item ?? new Item();

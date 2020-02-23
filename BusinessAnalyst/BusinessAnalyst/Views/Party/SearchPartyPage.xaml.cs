@@ -19,9 +19,14 @@ namespace BusinessAnalyst.Views.Parties
         private DbTransaction dbTransaction;
         private bool _isFromSearch;
         private PartyType? _partyType;
-        public SearchPartyPage(string title, bool isSearch = true, PartyType? partyType = null)
+
+        public SearchPartyPage()
         {
             InitializeComponent();
+
+        }
+        public SearchPartyPage(string title, bool isSearch = true, PartyType? partyType = null)
+        {
             Title = title;
             _isFromSearch = isSearch;
             _partyType = partyType;
